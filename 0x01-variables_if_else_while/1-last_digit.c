@@ -4,8 +4,9 @@
 
 /**
  * main - Entry point
- * Description: Assigns a random number
- * to the variable 'n' each time the program is executed
+ * Description: Prints the last digit of n
+ * and whether it is greater than 5 or
+ * less than 6 but not zero
  * Return: Always 0 (Success)
  */
 int main(void)
