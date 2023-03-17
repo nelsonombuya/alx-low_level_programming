@@ -1,11 +1,8 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 
 /**
  * main - Entry point
- * Description: Assigns a random number
- * to the variable 'n' each time the program is executed
+ * Description: Print the alphabet in lowercase
  * Return: Always 0 (Success)
  */
 int main(void)
