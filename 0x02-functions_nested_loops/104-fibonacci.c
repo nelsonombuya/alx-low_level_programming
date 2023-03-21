@@ -22,10 +22,10 @@ int main(void)
 		j = k - j;
 	}
 
-	/* 
-		Dividing the numbers into 2 in order to save space
-		In order to continue using unsigned long int
-	*/
+	/** 
+	 * Dividing the numbers into 2 in order to save space
+	 * in order to continue using unsigned long int
+	 */
 	j1 = j / 1000000000;
 	j2 = j % 1000000000;
 	k1 = k / 1000000000;
