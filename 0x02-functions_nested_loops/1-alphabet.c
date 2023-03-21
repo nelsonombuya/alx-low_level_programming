@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * main - Entry point
- * Description: prints lowecase alphabet
- * Return: 0 (success)
+ * print_alphabet
+ * Description: prints "_putchar" followed by a new line
+ * Return: void
  */
 void print_alphabet(void)
 {
 	char ch;
+
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
 		_putchar(ch);
