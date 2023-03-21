@@ -22,7 +22,7 @@ int main(void)
 		j = k - j;
 	}
 
-	/** 
+	/*
 	 * Dividing the numbers into 2 in order to save space
 	 * in order to continue using unsigned long int
 	 */
