@@ -2,9 +2,9 @@
 
 /**
  * print_line - prints a line
- * 
- * @n: 	number of times the character should
- * 		be printed
+ *
+ * @n: number of times the character should
+ * be printed
  *
  * Return: 0
  */
