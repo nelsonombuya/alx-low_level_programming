@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * _puts - print a string in reverse
+ * print_rev - print a string in reverse
  * @s: pointer to string array
  * Return: 0
  */
-void _puts(char *s)
+void print_rev(char *s)
 {
 	int a = 0;
 	int b = 0;
