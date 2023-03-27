@@ -1,17 +1,17 @@
 #include "main.h"
 /**
  * _puts - print a string in reverse
- * @str: pointer to string array
+ * @s: pointer to string array
  * Return: 0
  */
-void _puts(char *str)
+void _puts(char *s)
 {
 	int a = 0;
 	int b = 0;
 
-	while (*(str + a) != '\0')
+	while (*(s + a) != '\0')
 	{
-		_putchar(*(str + a));
+		_putchar(*(s + a));
 		a++;
 	}
 
