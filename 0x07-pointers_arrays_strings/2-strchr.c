@@ -1,5 +1,5 @@
 #include "main.h"
-11;rgb:0000/0000/0000
+
 /**
  * _strchr - Locates a character in a string.
  *
