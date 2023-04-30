@@ -28,3 +28,9 @@ Function that prints all of the elements of a list_t linked list.
 
 ### 1. List Length
 Returns the number of elements in a linked list_t list.
+
+### 2. Add Node
+Add's a node to the beginning of the linked list.
+
+### 2. Add Node End
+Add's a node to the end of the linked list.

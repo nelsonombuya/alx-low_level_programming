@@ -30,6 +30,10 @@ size_t list_len(const list_t *h);
 /* Adds a new node at the beginning of the linked list */
 list_t *add_node(list_t **head, const char *str);
 
+/* Question 3 Prototype */
+/* Adds a new node at the end of the linked list */
+list_t *add_node_end(list_t **head, const char *str);
+
 /* Helper Functions */
 /**
  * _str_len - Counts the number of characters in a string
