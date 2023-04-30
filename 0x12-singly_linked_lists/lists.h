@@ -14,9 +14,9 @@
  */
 typedef struct list_s
 {
-	char *str;
-	unsigned int len;
-	struct list_s *next;
+    char *str;
+    unsigned int len;
+    struct list_s *next;
 } list_t;
 
 /* Question 0 Prototype*/
@@ -40,18 +40,6 @@ list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 
 /* Helper Functions */
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
 /**
  * _str_len - Counts the number of characters in a string
  * @str: The character array
@@ -59,14 +47,14 @@ int _putchar(char c)
  */
 size_t _str_len(const char *str)
 {
-	size_t len = 0;
+    size_t len = 0;
 
-	while (str[len] != '\0')
-	{
-		len++;
-	}
+    while (str[len] != '\0')
+    {
+        len++;
+    }
 
-	return (len);
+    return (len);
 }
 
 #endif
