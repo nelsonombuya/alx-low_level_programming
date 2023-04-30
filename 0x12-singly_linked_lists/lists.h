@@ -1,5 +1,5 @@
-#ifndef _LISTS_H_
-#define _LISTS_H_
+#ifndef LISTS_H
+#define LISTS_H
 
 #include <stdlib.h>
 
@@ -56,4 +56,4 @@ size_t _str_len(const char *str)
 	return (len);
 }
 
-#endif
+#endif /* LISTS_H */
