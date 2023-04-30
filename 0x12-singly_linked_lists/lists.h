@@ -19,7 +19,11 @@ typedef struct list_s
 } list_t;
 
 /* Question 0 Prototype*/
-// So this basically returns the memory size of the list structure
+/* Returns the properties of the linked list */
 size_t print_list(const list_t *h);
+
+/* Question 1 Prototype*/
+/* Returns the number of elements in the linked list */
+size_t list_len(const list_t *h);
 
 #endif
