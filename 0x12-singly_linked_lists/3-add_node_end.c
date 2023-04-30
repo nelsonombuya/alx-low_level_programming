@@ -1,54 +1,41 @@
 #include "lists.h"
 #include <stdlib.h>
-
-/**
- * _str_len - Counts the number of characters in a string
- * @str: The character array
- * Return: The number of characters in the string
- */
-size_t _str_len(const char *str)
-{
-	size_t len = 0;
-
-	while (str[len] != '\0')
-	{
-		len++;
-	}
-
-	return (len);
-}
+#include <string.h>
 
 /**
  * add_node_end - Adds a new node to the end of the linked list
  * @head: Pointer to the pointer of the head node
  * @str: Pointer to the string to be stored in the new element in
  * the linked list
- * Return: The created Node
+ * Return: The created Node or NULL upon Failure
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	unsigned int len = _str_len(str);
+	list_t *newNode;
+	unsigned int len = 0;
 
-	list_t *newNode = malloc(sizeof(list_t));
+	while (str[len])
+		len++;
 
-	if (newNode == NULL)
+	newNode = malloc(sizeof(list_t));
+	if (!newNode)
 		return (NULL);
 
 	newNode->str = strdup(str);
-	if (newNode->str == NULL)
+	if (!newNode->str)
 	{
 		free(newNode);
 		return (NULL);
 	}
 
 	newNode->len = len;
-	newNode->next = NULL;
+	newNode->next = (*head);
 
-	if (*head == NULL)
-		*head = newNode;
+	if (!(*head))
+		(*head) = newNode;
 	else
 	{
-		list_t *current = *head;
+		list_t *current = (*head);
 
 		while (current->next != NULL)
 		{
@@ -58,5 +45,5 @@ list_t *add_node_end(list_t **head, const char *str)
 		current->next = newNode;
 	}
 
-	return (newNode);
+	return (*head);
 }
