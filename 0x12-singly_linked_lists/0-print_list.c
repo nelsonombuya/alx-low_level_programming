@@ -20,6 +20,36 @@ void print_nil(void)
 }
 
 /**
+ * print_num - Prints the length of the string using _putchar
+ * Return: Void
+ */
+void print_num(size_t num)
+{
+	size_t divisor = 1;
+
+	_putchar('[');
+
+	if (num == 0)
+		_putchar('0');
+	else
+	{
+		/* In case of any leading zeroes from test cases */
+		while (num / divisor >= 10)
+			divisor *= 10;
+
+		while (divisor > 0)
+		{
+			_putchar(num / divisor + '0');
+			num %= divisor;
+			divisor /= 10;
+		}
+	}
+
+	_putchar(']');
+	_putchar(' ');
+}
+
+/**
  * print_list - Prints the properties and elements of a linked list
  * @h: Pointer to the HEAD of the linked list
  * Return: The number of elements in the linked list
@@ -34,30 +64,9 @@ size_t print_list(const list_t *h)
 			print_nil();
 		else
 		{
-			size_t len = h->len;
-			size_t divisor = 1;
+			print_num(h->len);
+
 			int i;
-
-			_putchar('[');
-
-			if (len == 0)
-				_putchar('0');
-			else
-			{
-				while (len / divisor >= 10)
-					divisor *= 10;
-
-				while (divisor > 0)
-				{
-					_putchar(len / divisor + '0');
-					len %= divisor;
-					divisor /= 10;
-				}
-			}
-
-			_putchar(']');
-			_putchar(' ');
-
 			for (i = 0; h->str[i] != '\0'; i++)
 				_putchar(h->str[i]);
 
