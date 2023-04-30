@@ -1,22 +1,5 @@
 #include "lists.h"
-#include <stdlib.h>
-
-/**
- * _str_len - Counts the number of characters in a string
- * @str: The character array
- * Return: The number of characters in the string
- */
-size_t _str_len(const char *str)
-{
-	size_t len = 0;
-
-	while (str[len] != '\0')
-	{
-		len++;
-	}
-
-	return (len);
-}
+#include <string.h>
 
 /**
  * add_node - Adds a new node to the beginning of the linked list
@@ -27,9 +10,12 @@ size_t _str_len(const char *str)
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	unsigned int len = _str_len(str);
+	unsigned int len = 0;
+	while (str[len])
+		len++;
 
-	list_t *newNode = malloc(sizeof(list_t));
+	list_t *newNode;
+	newNode = malloc(sizeof(list_t));
 
 	if (newNode == NULL)
 		return (NULL);
@@ -42,8 +28,8 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	newNode->len = len;
-	newNode->next = *head;
-	*head = newNode;
+	newNode->next = (*head);
+	(*head) = newNode;
 
-	return (newNode);
+	return (*head);
 }
