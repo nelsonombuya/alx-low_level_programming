@@ -3,11 +3,11 @@
 /**
  * print_list - Prints the properties and elements of a linked list
  * @h: Pointer to the HEAD of the linked list
- * Return: The number of nodes in the linked list
+ * Return: The number of elements in the linked list
  */
 size_t print_list(const list_t *h)
 {
-	size_t numberOfNodes = 0;
+	size_t numberOfElements = 0;
 
 	while (h)
 	{
@@ -19,9 +19,9 @@ size_t print_list(const list_t *h)
 		{
 			printf("[%d] %s\n", h->len, h->str);
 		}
-		numberOfNodes++;
+		numberOfElements++;
 		h = h->next;
 	}
 
-	return numberOfNodes;
+	return numberOfElements;
 }
