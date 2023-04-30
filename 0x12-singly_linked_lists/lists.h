@@ -14,9 +14,9 @@
  */
 typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
 /* Question 0 Prototype*/
@@ -49,7 +49,7 @@ void free_list(list_t *head);
  */
 int _putchar(char c)
 {
-    return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -59,14 +59,14 @@ int _putchar(char c)
  */
 size_t _str_len(const char *str)
 {
-    size_t len = 0;
+	size_t len = 0;
 
-    while (str[len] != '\0')
-    {
-        len++;
-    }
+	while (str[len] != '\0')
+	{
+		len++;
+	}
 
-    return len;
+	return (len);
 }
 
 #endif

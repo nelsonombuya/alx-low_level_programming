@@ -21,6 +21,7 @@ void print_nil(void)
 
 /**
  * print_num - Prints the length of the string using _putchar
+ * @num: The length of the string as set on the structure
  * Return: Void
  */
 void print_num(size_t num)
@@ -67,6 +68,7 @@ size_t print_list(const list_t *h)
 			print_num(h->len);
 
 			int i;
+
 			for (i = 0; h->str[i] != '\0'; i++)
 				_putchar(h->str[i]);
 

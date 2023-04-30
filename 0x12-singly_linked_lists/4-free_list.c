@@ -2,7 +2,7 @@
 
 /**
  * free_list - Frees the memory of the elements of a linked list
- * @h: Pointer to the HEAD of the linked list
+ * @head: Pointer to the HEAD of the linked list
  * Return: Void
  */
 void free_list(list_t *head)
