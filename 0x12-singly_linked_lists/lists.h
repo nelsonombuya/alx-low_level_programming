@@ -2,6 +2,7 @@
 #define _LISTS_H_
 
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * struct list_s - singly linked list
@@ -34,7 +35,23 @@ list_t *add_node(list_t **head, const char *str);
 /* Adds a new node at the end of the linked list */
 list_t *add_node_end(list_t **head, const char *str);
 
+/* Question 4 Prototype */
+/* Frees a list_t list */
+void free_list(list_t *head);
+
 /* Helper Functions */
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+    return (write(1, &c, 1));
+}
+
 /**
  * _str_len - Counts the number of characters in a string
  * @str: The character array

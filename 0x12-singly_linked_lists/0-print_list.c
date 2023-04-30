@@ -13,11 +13,51 @@ size_t print_list(const list_t *h)
 	{
 		if (h->str == NULL)
 		{
-			printf("[0] (nil)\n");
+			_putchar('[');
+			_putchar('0');
+			_putchar(']');
+			_putchar(' ');
+			_putchar('(');
+			_putchar('n');
+			_putchar('i');
+			_putchar('l');
+			_putchar(')');
+			_putchar('\n');
 		}
 		else
 		{
-			printf("[%d] %s\n", h->len, h->str);
+			size_t len = h->len;
+			size_t divisor = 1;
+			int i;
+
+			_putchar('[');
+
+			if (len == 0)
+			{
+				_putchar('0');
+			}
+			else
+			{
+				while (len / divisor >= 10)
+					divisor *= 10;
+
+				while (divisor > 0)
+				{
+					_putchar(len / divisor + '0');
+					len %= divisor;
+					divisor /= 10;
+				}
+			}
+
+			_putchar(']');
+			_putchar(' ');
+
+			for (i = 0; h->str[i] != '\0'; i++)
+			{
+				_putchar(h->str[i]);
+			}
+
+			_putchar('\n');
 		}
 		numberOfElements++;
 		h = h->next;
