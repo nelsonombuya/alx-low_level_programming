@@ -1,5 +1,5 @@
 #ifndef LISTS_H
-#define LISTS_H
+11;rgb:0000/0000/0000#define LISTS_H
 
 #include <stdlib.h>
 
@@ -37,23 +37,5 @@ list_t *add_node_end(list_t **head, const char *str);
 /* Question 4 Prototype */
 /* Frees a list_t list */
 void free_list(list_t *head);
-
-/* Helper Functions */
-/**
- * _str_len - Counts the number of characters in a string
- * @str: The character array
- * Return: The number of characters in the string
- */
-size_t _str_len(const char *str)
-{
-	size_t len = 0;
-
-	while (str[len] != '\0')
-	{
-		len++;
-	}
-
-	return (len);
-}
 
 #endif /* LISTS_H */
