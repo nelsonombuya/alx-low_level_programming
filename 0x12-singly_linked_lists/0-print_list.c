@@ -5,7 +5,7 @@
  * in a linked list
  * Return: Void
  */
-void print_nil()
+void print_nil(void)
 {
 	_putchar('[');
 	_putchar('0');
