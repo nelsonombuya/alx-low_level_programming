@@ -21,3 +21,7 @@
 - Only allowed functions: malloc, free, exit.
 - _putchar() is allowed
 - Prototypes to be included in lists.h
+
+## Questions
+### 0. Print List
+Function that prints all of the elements of a list_t linked list.
