@@ -26,4 +26,26 @@ size_t print_list(const list_t *h);
 /* Returns the number of elements in the linked list */
 size_t list_len(const list_t *h);
 
+/* Question 2 Prototype */
+/* Adds a new node at the beginning of the linked list */
+list_t *add_node(list_t **head, const char *str);
+
+/* Helper Functions */
+/**
+ * _str_len - Counts the number of characters in a string
+ * @str: The character array
+ * Return: The number of characters in the string
+ */
+size_t _str_len(const char *str)
+{
+    size_t len = 0;
+
+    while (str[len] != '\0')
+    {
+        len++;
+    }
+
+    return len;
+}
+
 #endif
