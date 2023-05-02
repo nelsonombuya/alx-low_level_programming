@@ -5,7 +5,7 @@
  * @head: Pointer to the HEAD of the linked list
  * Return: Void
  */
-void free_list(listint_t *head)
+void free_listint(listint_t *head)
 {
 	listint_t *current = head;
 	listint_t *next_node;
