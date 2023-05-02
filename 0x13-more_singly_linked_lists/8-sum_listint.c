@@ -25,5 +25,5 @@ int sum_listint(listint_t *head)
 		currentNode = currentNode->next;
 	}
 
-	return sum;
+	return (sum);
 }
