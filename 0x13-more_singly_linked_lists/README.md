@@ -40,3 +40,6 @@ Function that deletes the head node of a listint_t linked list, and returns the 
 
 ### Question 7 - Get node at index
 Function that returns the nth node of a listint_t linked list.
+
+### Question 8 - Sum list
+Function that returns the sum of all the data (n) of a linked list.
