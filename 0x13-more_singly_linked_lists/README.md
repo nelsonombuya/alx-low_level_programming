@@ -19,3 +19,6 @@
 ## Questions
 ### Question 0 - Print List
 Function that prints all the elements of a listint_t list.
+
+### Question 1 - List length
+Function that returns the number of element sin a linked listint_t list.
