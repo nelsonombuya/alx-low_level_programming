@@ -6,26 +6,24 @@
  * @head: Double pointer to the head of the linked list
  * @idx: The index at which the node is to be inserted
  * @n: The value of the node to be inserted
- * Return: The address of the new node, or NULL on failure
+ * Return: The address of the new node
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int i;
-	listint_t *newNode, *currentNode;
+	unsigned int i = 0;
+	listint_t *newNode;
+	listint_t *currentNode = *head;
 
-	if (head == NULL)
+	if (*head == NULL)
 		return (NULL);
 
-	currentNode = *head;
+	if (idx != 0)
+		for (i; i < idx - 1; i++)
+		{
+			currentNode = currentNode->next;
+		}
 
-	for (i = 0; currentNode != NULL && i < idx; i++)
-	{
-		if (i == idx - 1)
-			break;
-		currentNode = currentNode->next;
-	}
-
-	if (i < idx)
+	if (currentNode == NULL && idx != 0)
 		return (NULL);
 
 	newNode = malloc(sizeof(listint_t));
