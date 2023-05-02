@@ -37,3 +37,6 @@ Function that frees a listint_t list (Sets the head node to null).
 
 ### Question 6 - Pop
 Function that deletes the head node of a listint_t linked list, and returns the head node's data (n).
+
+### Question 7 - Get node at index
+Function that returns the nth node of a listint_t linked list.
