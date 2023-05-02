@@ -31,3 +31,9 @@ Function that adds a new node at the end of a listint_t list.
 
 ### Question 4 - Free List
 Function that frees a listint_t list.
+
+### Question 5 - Free List
+Function that frees a listint_t list (Sets the head node to null).
+
+### Question 6 - Pop
+Function that deletes the head node of a listint_t linked list, and returns the head node's data (n).
