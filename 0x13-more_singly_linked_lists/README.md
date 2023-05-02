@@ -25,3 +25,6 @@ Function that returns the number of element sin a linked listint_t list.
 
 ### Question 2 - Add Node
 Function that adds a new node at the beginning of a listint_t list.
+
+### Question 3 - Add Node End
+Function that adds a new node at the end of a listint_t list.
