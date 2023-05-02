@@ -9,19 +9,13 @@
  */
 int sum_listint(listint_t *head)
 {
-	unsigned int sum = 0;
+	int sum = 0;
 	listint_t *currentNode = head;
 
-	if (currentNode == NULL)
-		return (0);
-
-	while (currentNode)
+	while (currentNode != NULL)
 	{
-		if (currentNode->n != NULL)
-		{
-			sum += currentNode->n;
-		}
 
+		sum += currentNode->n;
 		currentNode = currentNode->next;
 	}
 
