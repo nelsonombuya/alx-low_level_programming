@@ -6,7 +6,7 @@
  * @n: Primitive integer value to be added to the node
  * Return: The Created Node or NULL upon failure
  */
-listint_t *add_node(listint_t **head, const int n)
+listint_t *add_node_int(listint_t **head, const int n)
 {
 	listint_t *newNode;
 
