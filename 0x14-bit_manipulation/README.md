@@ -36,3 +36,6 @@ Function that converts a binary number to an unsigned int.
 
 ### Question 1
 Function that prints the binary representation of a number.
+
+### Question 2
+Function that returns the value of a bit at a given index.
