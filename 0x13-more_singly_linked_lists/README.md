@@ -46,3 +46,6 @@ Function that returns the sum of all the data (n) of a linked list.
 
 ### Question 9 - Insert
 Function that inserts a new node at a given position.
+
+### Question 10 - Delete at Index
+Function that deletes the node at index index of a listint_t linked list.
