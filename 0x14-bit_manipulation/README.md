@@ -29,3 +29,10 @@ Any form of plagiarism is strictly forbidden and will result in removal from the
 - The prototypes of all your functions and the prototype of the function _putchar should be included in your header file called main.h
 - Don’t forget to push your header file
 - All your header files should be include guarded
+
+
+### Question 0
+Function that converts a binary number to an unsigned int.
+
+### Question 1
+Function that prints the binary representation of a number.
