@@ -22,4 +22,7 @@ int clear_bit(unsigned long int *n, unsigned int index);
 /* Question 5 */
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
+/* Question 6 */
+int get_endianness(void);
+
 #endif /* MAIN_H */

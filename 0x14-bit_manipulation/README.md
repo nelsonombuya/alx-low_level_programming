@@ -48,3 +48,6 @@ Function that sets the value of a bit to 0 at a given index.
 
 ### Question 5
 Function that returns the number of bits you would need to flip to get from one number to another.
+
+### Question 6
+Function that checks the endianness. Endianness being the order in which the computer reads bytes:Big-endian (BE) or Little-endian (LE).
