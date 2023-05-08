@@ -52,3 +52,6 @@ Function that deletes the node at index index of a listint_t linked list.
 
 ### Question 11 - Reverse List
 Function that reverses a listint_t linked list.
+
+### Question 12 - Print (Safe Version)
+Function that prints a listint_t linked list.
