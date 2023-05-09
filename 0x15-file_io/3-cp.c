@@ -1,33 +1,46 @@
 #include "main.h"
-#define MAXSIZE 1024
+#include <stdio.h>
+#include <stdlib.h>
+
+void close_file(int fd);
+char *create_buffer(char *file);
 
 /**
- * exitCode - Prints error messages and exits the program with a
- * relevant exit code.
- * @error: The Exit Code or the File Descriptor
- * @str: The name of 'fileIn' or 'fileOut'
- * @fd: The File Descriptor
- * Return: 0 on success
+ * close_file - Closes a file descriptor.
+ * @fd: The file descriptor to be closed.
+ * Return: void
  */
-int exitCode(int error, char *str, int fd)
+void close_file(int fd)
 {
-	switch (error)
+	int closeFD;
+
+	closeFD = close(fd);
+
+	if (closeFD == -1)
 	{
-	case 97:
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(error);
-	case 98:
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", str);
-		exit(error);
-	case 99:
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", str);
-		exit(error);
-	case 100:
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(error);
-	default:
-		return (0);
+		exit(100);
 	}
+}
+
+/**
+ * create_buffer - Allocates 1024 bytes for a buffer.
+ * @file: The name of the file the buffer is created for.
+ * Return: A pointer fileTo the newly-allocated buffer.
+ */
+char *create_buffer(char *file)
+{
+	char *buffer;
+
+	buffer = malloc(sizeof(char) * 1024);
+
+	if (buffer == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write fileTo %s\n", file);
+		exit(99);
+	}
+
+	return (buffer);
 }
 
 /**
@@ -43,37 +56,45 @@ int exitCode(int error, char *str, int fd)
  */
 int main(int argc, char *argv[])
 {
-	char buffer[MAXSIZE];
-	int fileIn, fileOut, readStat, writeStat, closeIn, closeOut;
+	char *buffer;
+	int fileFrom, fileTo, fileRead, fileWrite;
 
 	if (argc != 3)
-		exitCode(97, NULL, 0);
-
-	fileIn = open(argv[1], O_RDONLY);
-	if (fileIn == -1)
-		exitCode(98, argv[1], 0);
-
-	fileOut = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (fileOut == -1)
-		exitCode(99, argv[2], 0);
-
-	while ((readStat = read(fileIn, buffer, MAXSIZE)) != 0)
 	{
-		if (readStat == -1)
-			exitCode(98, argv[1], 0);
-
-		writeStat = write(fileOut, buffer, readStat);
-		if (writeStat == -1)
-			exitCode(99, argv[2], 0);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
 
-	closeIn = close(fileIn);
-	if (closeIn == -1)
-		exitCode(100, NULL, fileIn);
+	buffer = create_buffer(argv[2]);
+	fileFrom = open(argv[1], O_RDONLY);
+	fileRead = read(fileFrom, buffer, 1024);
+	fileTo = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	closeOut = close(fileOut);
-	if (closeOut == -1)
-		exitCode(100, NULL, fileOut);
+	do
+	{
+		if (fileFrom == -1 || fileRead == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read fileFrom file %s\n", argv[1]);
+			free(buffer);
+			exit(98);
+		}
+
+		fileWrite = write(fileTo, buffer, fileRead);
+		if (fileTo == -1 || fileWrite == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write fileTo %s\n", argv[2]);
+			free(buffer);
+			exit(99);
+		}
+
+		fileRead = read(fileFrom, buffer, 1024);
+		fileTo = open(argv[2], O_WRONLY | O_APPEND);
+
+	} while (fileRead > 0);
+
+	free(buffer);
+	close_file(fileTo);
+	close_file(fileFrom);
 
 	return (0);
 }
