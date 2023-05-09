@@ -70,8 +70,7 @@ int main(int argc, char *argv[])
 	fileRead = read(fileFrom, buffer, 1024);
 	fileTo = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do
-	{
+	do {
 		if (fileFrom == -1 || fileRead == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read fileFrom file %s\n", argv[1]);
