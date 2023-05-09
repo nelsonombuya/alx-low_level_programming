@@ -4,25 +4,6 @@
 
 void close_file(int fd);
 char *create_buffer(char *file);
-
-/**
- * close_file - Closes a file descriptor.
- * @fd: The file descriptor to be closed.
- * Return: void
- */
-void close_file(int fd)
-{
-	int closeFD;
-
-	closeFD = close(fd);
-
-	if (closeFD == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(100);
-	}
-}
-
 /**
  * create_buffer - Allocates 1024 bytes for a buffer.
  * @file: The name of the file the buffer is created for.
@@ -41,6 +22,24 @@ char *create_buffer(char *file)
 	}
 
 	return (buffer);
+}
+
+/**
+ * close_file - Closes a file descriptor.
+ * @fd: The file descriptor to be closed.
+ * Return: void
+ */
+void close_file(int fd)
+{
+	int closeFD;
+
+	closeFD = close(fd);
+
+	if (closeFD == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
 
 /**
@@ -93,8 +92,8 @@ int main(int argc, char *argv[])
 	} while (fileRead > 0);
 
 	free(buffer);
-	close_file(fileTo);
 	close_file(fileFrom);
+	close_file(fileTo);
 
 	return (0);
 }
