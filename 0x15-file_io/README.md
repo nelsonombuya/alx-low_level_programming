@@ -20,5 +20,14 @@
 - Tip: always prefer using symbolic constants (POSIX) vs numbers when it makes sense. For instance read(STDIN_FILENO, ... vs read(0, ...
 
 ## Questions
-### Question 0 - read_textfile.c
+### Question 0 - 0-read_textfile.c
 Function that reads a text file and prints it to the POSIX standard output.
+
+### Question 1 - 1-create_file.c
+Function that creates a file
+
+### Question 2 - 2-append_text_to_file.c
+Function that appends text at the end of a file.
+
+### Question 3 - 3-cp.c
+Program that copies the content of a file to another file.
