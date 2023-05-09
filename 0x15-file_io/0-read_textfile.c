@@ -7,38 +7,22 @@
  * @filename: A pointer to the name of the file.
  * @letters: The number of letters the function should read and print.
  * Return: 0 if the function fails, or @filename is NULL;
- * Else, prints the number of letters the function can read and print.
+ * Else, prints the number of letters the function read and printed.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	if (filename == NULL)
-		return (0);
-
 	char *buffer;
+	ssize_t file, fileWrite, text;
+
+	file = open(filename, O_RDONLY);
+	if (file == -1)
+		return (0);
 
 	buffer = malloc(sizeof(char) * letters);
-
-	if (buffer == NULL)
-		return (0);
-
-	ssize_t fileOpen, fileRead, fileWrite;
-
-	fileOpen = open(filename, O_RDONLY);
-	fileRead = read(fileOpen, buffer, letters);
-	fileWrite = write(STDOUT_FILENO, buffer, fileRead);
-
-	if (
-		fileOpen == -1 ||
-		fileRead == -1 ||
-		fileWrite == -1 ||
-		fileWrite != fileRead)
-	{
-		free(buffer);
-		return (0);
-	}
+	text = read(file, buffer, letters);
+	fileWrite = write(STDOUT_FILENO, buffer, text);
 
 	free(buffer);
-	close(fileOpen);
-
+	close(file);
 	return (fileWrite);
 }
